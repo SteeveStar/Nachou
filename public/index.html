@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pour Nacheca</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="aurora"></div>
+      <div class="glow-sweep"></div>
+      <div class="hearts" id="heartField"></div>
+      <div class="sparkles" id="sparkleField"></div>
+      <canvas id="petalCanvas" class="petal-canvas"></canvas>
+      <div class="pulse"></div>
+    </div>
+    <div class="mobile-badge" aria-hidden="true">Optimise pour mobile</div>
+    <div class="love-orbit" aria-label="Je t'aime Nacheca">Je t'aime Nacheca</div>
+    <header class="hero">
+      <p class="eyebrow">Une declaration du coeur</p>
+      <h1 class="title reveal">Nacheca, tu es le plus beau cadeau que la vie m'ait offert.</h1>
+      <p class="subtitle">Pour toi, aujourd'hui et pour toujours.</p>
+      <div class="buttons">
+        <button id="loveBtn" class="btn btn-love">Je t'aime Steeve ❤️</button>
+        <button id="timeBtn" class="btn btn-playful" aria-label="Tu veux m'inviter à danser ?">Tu veux m'inviter à danser ?</button>
+      </div>
+      <p id="loveResult" class="love-result" aria-live="polite"></p>
+      <div id="loveLetter" class="love-letter" aria-live="polite">
+        <p>Nacheca,</p>
+        <p>A cet instant precis, mon coeur sourit plus fort que jamais. Si tu savais a quel point ton amour me transforme…</p>
+        <p>Tu es mon calme dans le bruit, mon sourire dans les jours difficiles, et ma plus belle certitude.</p>
+        <p>Je ne te promets pas une vie parfaite, mais je te promets une vie vraie, remplie de respect, de rires, de patience, et d'amour sincere.</p>
+        <p>Choisir de t'aimer n'a jamais ete un effort, c'est une evidence.</p>
+        <p>Merci d'etre toi. Merci d'etre mon plus beau cadeau.</p>
+        <p>Je t'aime, aujourd'hui, demain, et toujours.</p>
+      </div>
+    </header>
+    <main>
+      <section class="messages">
+        <p class="message reveal">Chaque jour a tes cotes est une benediction</p>
+        <p class="message reveal">Je veux rire avec toi, grandir avec toi, vivre avec toi</p>
+        <p class="message reveal">Mon coeur t'appartient, aujourd'hui et toujours</p>
+        <p class="message reveal">Je t'aime profondement</p>
+      </section>
+      <section class="photos">
+        <h2 class="section-title reveal">Tes sourires qui illuminent ma vie</h2>
+        <div class="photo-grid">
+          <figure class="photo-card reveal">
+            <img src="../WhatsApp%20Image%202025-10-03%20at%2017.51.46.jpeg" alt="Nacheca" loading="lazy" />
+          </figure>
+          <figure class="photo-card reveal">
+            <img src="../WhatsApp%20Image%202026-01-01%20at%2005.03.12.jpeg" alt="Nacheca" loading="lazy" />
+          </figure>
+          <figure class="photo-card reveal">
+            <img src="../WhatsApp%20Image%202025-10-03%20at%2017.51.46.jpeg" alt="Nacheca" loading="lazy" />
+          </figure>
+          <figure class="photo-card reveal">
+            <img src="../WhatsApp%20Image%202026-01-01%20at%2005.03.12.jpeg" alt="Nacheca" loading="lazy" />
+          </figure>
+        </div>
+      </section>
+      <section class="final">
+        <p class="final-text reveal">Peu importe le temps, je te choisirai encore et encore.</p>
+      </section>
+    </main>
+    <div class="music">
+      <button id="musicToggle" class="btn btn-ghost btn-pulse" aria-pressed="false">
+        Ecoute moi
+        <span class="btn-icon" aria-hidden="true">➜</span>
+      </button>
+      <audio id="bgMusic" preload="auto" loop playsinline>
+        <source src="../John%20legend%20.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+    <div class="heart-burst" id="heartBurst" aria-hidden="true"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
