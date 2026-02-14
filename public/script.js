@@ -1,16 +1,40 @@
-// Forcer la lecture de la musique sur mobile après interaction utilisateur (touch/click/bouton)
-function playMusicOnMobile() {
+// Forcer la lecture de la musique sur mobile après interaction utilisateur (touch/click/bouton), sans empêcher les autres clics
+function playMusicOnMobile(e) {
   const bgMusic = document.getElementById('bgMusic');
   if (bgMusic && bgMusic.paused) {
     bgMusic.play().catch(()=>{});
   }
-  document.removeEventListener('touchstart', playMusicOnMobile);
-  document.removeEventListener('click', playMusicOnMobile);
+  document.removeEventListener('touchstart', playMusicOnMobile, true);
+  document.removeEventListener('click', playMusicOnMobile, true);
 }
-document.addEventListener('touchstart', playMusicOnMobile);
-document.addEventListener('click', playMusicOnMobile);
+document.addEventListener('touchstart', playMusicOnMobile, true);
+document.addEventListener('click', playMusicOnMobile, true);
 if (musicToggle) {
   musicToggle.addEventListener('click', playMusicOnMobile);
+}
+
+// Réécriture simple des boutons
+if (loveBtn) {
+  loveBtn.onclick = function() {
+    loveResult.textContent = "Tu as fait de moi l'homme le plus heureux du monde 💖";
+    loveResult.style.display = "block";
+    loveResult.style.color = "#FFD700";
+    loveLetter.style.display = "block";
+  };
+}
+
+if (timeBtn) {
+  let playfulClicks = 0;
+  timeBtn.onclick = function() {
+    playfulClicks++;
+    if (playfulClicks >= 4) {
+      loveResult.textContent = "Ou fou? Si w fou asireman ou fou pou mwen. Depoze boutey la, epi vini pou m pran w nan bra m.";
+      loveResult.style.display = "block";
+      loveResult.style.color = "#FFD700";
+      loveLetter.style.display = "block";
+      playfulClicks = 0;
+    }
+  };
 }
 const revealElements = document.querySelectorAll(".reveal");
 const loveBtn = document.getElementById("loveBtn");
@@ -94,8 +118,9 @@ loveBtn.addEventListener("click", (event) => {
   const x = rect.left + rect.width / 2;
   const y = rect.top + rect.height / 2;
   loveResult.textContent = "Tu as fait de moi l'homme le plus heureux du monde 💖";
-  loveResult.classList.add("visible");
-  loveLetter.classList.add("visible");
+  loveResult.style.display = "block";
+  loveResult.style.color = "#FFD700";
+  loveLetter.style.display = "block";
   burstHearts(x, y);
   burstHearts(x + 80, y + 20);
   burstHearts(x - 60, y - 20);
