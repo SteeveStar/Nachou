@@ -1,3 +1,11 @@
+// Forcer la lecture de la musique sur mobile après interaction utilisateur
+document.addEventListener('touchstart', function playMusicOnMobile() {
+  const bgMusic = document.getElementById('bgMusic');
+  if (bgMusic && bgMusic.paused) {
+    bgMusic.play().catch(()=>{});
+  }
+  document.removeEventListener('touchstart', playMusicOnMobile);
+});
 const revealElements = document.querySelectorAll(".reveal");
 const loveBtn = document.getElementById("loveBtn");
 const timeBtn = document.getElementById("timeBtn");
