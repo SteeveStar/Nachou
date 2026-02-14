@@ -94,8 +94,8 @@ loveBtn.addEventListener("click", (event) => {
   const x = rect.left + rect.width / 2;
   const y = rect.top + rect.height / 2;
   loveResult.textContent = "Tu as fait de moi l'homme le plus heureux du monde 💖";
-  loveResult.classList.add("visible");
-  loveLetter.classList.add("visible");
+  loveResult.removeAttribute('style');
+  loveLetter.removeAttribute('style');
   burstHearts(x, y);
   burstHearts(x + 80, y + 20);
   burstHearts(x - 60, y - 20);
